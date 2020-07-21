@@ -1,0 +1,5 @@
+export const getUserRepos = (username) => {
+  return fetch(`https://api.github.com/users/${username}/repos`)
+    .then(res => res.json())
+    .then(res => res.map(repo => repo.html_url));
+};

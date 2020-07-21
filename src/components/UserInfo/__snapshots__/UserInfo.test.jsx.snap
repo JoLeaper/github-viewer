@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserInfo component renders UserInfo 1`] = `
+<Fragment>
+  <h1>
+    Username: 
+    JoLeaper
+  </h1>
+  <h1>
+    Followers: 
+    1
+  </h1>
+  <h1>
+    Following: 
+    1
+  </h1>
+  <h1>
+    githubURL: 
+    github.com/user/JoLeaper
+  </h1>
+</Fragment>
+`;

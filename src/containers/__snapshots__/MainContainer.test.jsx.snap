@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContainer component renders MainContainer 1`] = `
+<div>
+  <SearchBar
+    handleChange={[Function]}
+    handleSubmit={[Function]}
+  />
+  <UserInfo
+    userInfo={Object {}}
+  />
+  <UserRepos
+    userReposArray={Array []}
+  />
+</div>
+`;
