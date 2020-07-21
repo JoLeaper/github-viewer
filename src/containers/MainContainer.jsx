@@ -42,7 +42,7 @@ export default class MainContainer extends Component {
       <div>
         <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
         <UserInfo userInfo={userInfo} />
-        <UserRepos userName={userRepos}/>
+        <UserRepos userReposArray={userRepos}/>
       </div>
     );
   }

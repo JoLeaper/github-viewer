@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UserRepos = props => (
+const UserRepos = ({ userReposArray }) => (
   <>
-    <h1>this is where user repos will go</h1>
+    <h1>List of Repos</h1>
+    <ul>
+      {userReposArray.map(repo => {
+        return <li key={repo}><a href={repo}>{repo}</a></li>;
+      })}
+    </ul>
   </>
 );
 
-// UserRepos.propTypes = {
-//   prop: PropTypes
-// };
+UserRepos.propTypes = {
+  userReposArray: PropTypes.array
+};
 export default UserRepos;
