@@ -8,7 +8,8 @@ import { getUserRepos } from '../services/getUserRepos';
 export default class MainContainer extends Component {
   state = {
     userName: '',
-    userInfo: {}
+    userInfo: {},
+    userRepos: []
   }
 
   handleChange = (e) => {
@@ -19,21 +20,29 @@ export default class MainContainer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    getUserInfo(this.state.userName)
-      .then(res => this.setState({ userInfo: res }));
+    const { userName } = this.state;
+
+    Promise.all([
+      getUserInfo(userName),
+      getUserRepos(userName)
+    ])
+      .then(([userInfo, userRepos]) => this.setState({
+        userInfo: userInfo,
+        userRepos: userRepos
+      }));
   }
-  componentDidMount() {
-    getUserRepos('JoLeaper')
-      .then(res => console.log(res));
-  }
+  // componentDidMount() {
+  //   getUserRepos('JoLeaper')
+  //     .then(res => console.log(res));
+  // }
 
   render() {
-    const { userInfo } = this.state;
+    const { userInfo, userRepos } = this.state;
     return (
       <div>
         <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
         <UserInfo userInfo={userInfo} />
-        {/* <UserRepos userName={userName}/> */}
+        <UserRepos userName={userRepos}/>
       </div>
     );
   }
