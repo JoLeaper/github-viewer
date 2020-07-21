@@ -3,6 +3,7 @@ import SearchBar from '../components/SearchBar/SearchBar';
 import UserInfo from '../components/UserInfo/UserInfo';
 import UserRepos from '../components/UserRepos/UserRepos';
 import { getUserInfo } from '../services/getUserInfo';
+import { getUserRepos } from '../services/getUserRepos';
 
 export default class MainContainer extends Component {
   state = {
@@ -21,10 +22,10 @@ export default class MainContainer extends Component {
     getUserInfo(this.state.userName)
       .then(res => this.setState({ userInfo: res }));
   }
-  // componentDidMount() {
-  //   getUserInfo('JoLeaper')
-  //     .then(res => console.log(res));
-  // }
+  componentDidMount() {
+    getUserRepos('JoLeaper')
+      .then(res => console.log(res));
+  }
 
   render() {
     const { userInfo } = this.state;

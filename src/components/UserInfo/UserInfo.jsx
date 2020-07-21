@@ -11,7 +11,7 @@ const UserInfo = ({ userInfo: { username, followers, following, githubURL } }) =
 );
 
 UserInfo.propTypes = {
-  userInfo: PropTypes.obj
+  userInfo: PropTypes.object
 };
 
 export default UserInfo;
