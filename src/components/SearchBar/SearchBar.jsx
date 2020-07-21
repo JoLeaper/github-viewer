@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ handleChange }) => (
+const SearchBar = ({ handleChange, handleSubmit }) => (
   <>
-    <input name='userName' onChange={ handleChange } />
+    <form onSubmit={ handleSubmit }>
+      <input name='userName' onChange={ handleChange } />
+      <button>Submit</button>
+    </form>
   </>
 );
 
 SearchBar.propTypes = {
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  handleSubmit: PropTypes.func
 };
 
 export default SearchBar;

@@ -6,7 +6,8 @@ import { getUserInfo } from '../services/getUserInfo';
 
 export default class MainContainer extends Component {
   state = {
-    userName: ''
+    userName: '',
+    userInfo: {}
   }
 
   handleChange = (e) => {
@@ -14,18 +15,24 @@ export default class MainContainer extends Component {
     newState[e.target.name] = e.target.value;
     this.setState(newState);
   }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    getUserInfo(this.state.userName)
+      .then(res => this.setState({ userInfo: res }));
+  }
   // componentDidMount() {
   //   getUserInfo('JoLeaper')
   //     .then(res => console.log(res));
   // }
 
   render() {
-    const { userName } = this.state;
+    const { userInfo } = this.state;
     return (
       <div>
-        <SearchBar handleChange={this.handleChange}/>
-        <UserInfo userName={userName} />
-        <UserRepos userName={userName}/>
+        <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+        <UserInfo userInfo={userInfo} />
+        {/* <UserRepos userName={userName}/> */}
       </div>
     );
   }
