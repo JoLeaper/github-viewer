@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const SearchBar = props => (
-<>
-<h1>hello world</h1>
-</>
+  <>
+    <h1>eggs and bacon</h1>
+  </>
 );
 
 export default SearchBar;
