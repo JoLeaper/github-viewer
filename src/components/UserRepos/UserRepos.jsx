@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const UserRepos = props => (
   <>
@@ -6,4 +7,7 @@ const UserRepos = props => (
   </>
 );
 
+UserRepos.propTypes = {
+  prop: PropTypes
+};
 export default UserRepos;
