@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SearchBar from '../components/SearchBar/SearchBar';
+import UserInfo from '../components/UserInfo/UserInfo';
+import UserRepos from '../components/UserRepos/UserRepos';
 
 export default class MainContainer extends Component {
   static propTypes = {
@@ -11,6 +13,8 @@ export default class MainContainer extends Component {
     return (
       <div>
         <SearchBar />
+        <UserInfo />
+        <UserRepos />
       </div>
     );
   }
