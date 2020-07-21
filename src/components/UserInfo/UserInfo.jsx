@@ -7,8 +7,8 @@ const UserInfo = props => (
   </>
 );
 
-UserInfo.propTypes = {
-  prop: PropTypes
-};
+// UserInfo.propTypes = {
+//   prop: PropTypes
+// };
 
 export default UserInfo;

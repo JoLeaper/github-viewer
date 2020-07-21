@@ -7,7 +7,7 @@ const UserRepos = props => (
   </>
 );
 
-UserRepos.propTypes = {
-  prop: PropTypes
-};
+// UserRepos.propTypes = {
+//   prop: PropTypes
+// };
 export default UserRepos;
